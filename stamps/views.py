@@ -2,7 +2,11 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from .models import Stamp, Year
 from django.db.models.functions import ExtractYear
+from django.http import HttpResponse
 import random
+
+def home(request):
+    return HttpResponse("Welcome to Stamp Catalog!")
 
 def year_list(request):
     years = Year.objects.all().order_by('-year')
