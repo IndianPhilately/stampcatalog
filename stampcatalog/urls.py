@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from stamps import views
 
 urlpatterns = [
+    path('', views.home, name='home'),   # root URL → homepage
     path('admin/', admin.site.urls),
     path('stamps/', include('stamps.urls')),
     path('stamps/search/', views.stamp_search, name='stamp_search'),
