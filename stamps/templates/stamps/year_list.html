@@ -1,0 +1,91 @@
+{% extends "stamps/base.html" %}
+{% load static %}
+
+{% block title %}Stamp Catalogue{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+    <!-- Left: main container -->
+    <div class="main-container">
+        <h2 class="home-title">Home</h2>
+        <p>
+            This site is for Philatelists around the world who collect Indian Postal Stamps.
+            DaakTicket India is an online resource and reference for Indian postage stamps
+            since independence till the latest issues.
+        </p>
+
+        <hr class="thin-separator">
+
+        <h3 class="latest-title">
+            Latest DTI addition:
+            <a href="{% url 'stamp_detail' 3 %}">Chaitya Bhoomi, Mumbai</a>
+        </h3>
+
+        <div class="latest-stamp">
+            <img src="/media/2013/stamps/2013-04-14.jpg" alt="Chaitya Bhoomi, Mumbai" class="stamp-image">
+            <div class="stamp-description">
+                <strong>Chaitya Bhoomi</strong> is the tribute of a grateful nation to the memory of Dr. B. R. Ambedkar, popularly known as Babasaheb, who was born on 14th April, 1891 in a Mahar family at Mhow, Madhya Pradesh.
+                <p>
+                After his early education in the then Bombay, he went abroad for higher studies. On returning to India in 1923, he started a campaign aimed at annihilation of caste and reconstruction of the Indian society on the basis of equality of human beings. He stood for a united self-governing community of Indians with special constitutional safeguards for the depressed classes. It is a tribute to his patriotism and erudition that independent India decided to
+                <a href="{% url 'stamp_detail' 3 %}">more...</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: side panel with years -->
+    <div class="year-widget">
+        <div class="year-header">Display Year</div>
+        <div class="year-list">
+            {% for y in years %}
+                <a href="{% url 'year_detail' y.year %}">{{ y.year }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div> <!-- close page-wrapper -->
+
+<!-- Bottom slider outside page-wrapper -->
+<div class="bottom-slider">
+    <div class="slider-wrapper">
+        {% for stamp in random_stamps %}
+        <div class="slide{% if forloop.first %} active{% endif %}">
+            <div class="slide-left">
+                <img src="{{ stamp.image.url }}" alt="{{ stamp.name }}" class="slide-stamp">
+            </div>
+            <div class="slide-right">
+                <div class="slide-info">
+                    <span class="slide-title">{{ stamp.name }}</span>
+                    <p>{{ stamp.release_date }} | {{ stamp.denomination }}</p>
+                </div>
+                <div class="slide-footer">
+                    <a href="{% url 'stamp_detail' stamp.id %}" class="slide-btn">View full post</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+
+    function showSlide(index) {
+        slides.forEach((s, i) => {
+            s.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+
+    // initial display
+    showSlide(current);
+
+    // auto change every 5 seconds
+    setInterval(nextSlide, 5000);
+});
+</script>
+{% endblock %}

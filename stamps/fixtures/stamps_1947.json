@@ -1,0 +1,24 @@
+[
+  {
+    "model": "stamps.stamp",
+    "fields": {
+      "name": "Ashoka Lion Capital",
+      "issue_date": "1947-12-15",
+      "denomination": "1.5 Annas",
+      "theme": "National Symbols & Identity",
+      "keywords": "Ashoka Lion Capital, 1947",
+      "image": "1947/stamps/1947-12-15-1.jpg"
+    }
+  },
+  {
+    "model": "stamps.stamp",
+    "fields": {
+      "name": "Aircraft",
+      "issue_date": "1947-12-15",
+      "denomination": "12 Annas",
+      "theme": "Transportation",
+      "keywords": "Aircraft, 1947",
+      "image": "1947/stamps/1947-12-15-2.jpg"
+    }
+  }
+]

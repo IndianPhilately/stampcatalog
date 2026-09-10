@@ -1,0 +1,26 @@
+{% extends "stamps/base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">
+    <a href="{% url 'year_list' %}">Home</a> → Search
+</div>
+
+<h1>Search Results for "{{ query }}"</h1>
+
+<div class="gallery">
+    {% for stamp in results %}
+        <div class="card">
+            <a href="{% url 'stamp_detail' stamp.pk %}">
+                {% if stamp.image %}
+                    <img src="{{ stamp.image.url }}" alt="{{ stamp.name }}">
+                {% endif %}
+                <h2>{{ stamp.name }}</h2>
+            </a>
+        </div>
+    {% empty %}
+        <p>No stamps found matching your search.</p>
+    {% endfor %}
+</div>
+{% endblock %}

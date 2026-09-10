@@ -1,0 +1,109 @@
+{% extends "stamps/base.html" %}
+{% load static %}
+
+{% block title %}{{ stamp.name }}{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+    <!-- Left: main content -->
+    <div class="main-container">
+        <h2 class="home-title">{{ stamp.name }}</h2>
+        <p class="stamp-meta">
+            <strong>Release Date:</strong> {{ stamp.issue_date|date:"F d, Y" }},
+            <strong>Denomination:</strong> {{ stamp.denomination }}
+        </p>
+
+        <hr class="thin-separator">
+
+        {% if stamp.image %}
+            <img src="{{ stamp.image.url }}" alt="{{ stamp.name }}" class="stamp-image">
+        {% endif %}
+
+        <div class="stamp-description">
+            {{ stamp.description|safe }}
+        </div>
+
+        <!-- First Day Cover Section -->
+        {% if stamp.first_day_cover %}
+        <hr class="thin-separator">
+        <div class="extra-section">
+            <h3>First Day Cover</h3>
+            <a href="{{ stamp.first_day_cover.url }}" class="popup-link">
+                <img src="{{ stamp.first_day_cover.url }}" alt="First Day Cover for {{ stamp.name }}" class="extra-image">
+            </a>
+        </div>
+        {% endif %}
+
+        <!-- Brochure Section -->
+        {% if stamp.brochure_image1 or stamp.brochure_image2 %}
+        <hr class="thin-separator">
+        <div class="extra-section">
+            <h3>Brochure</h3>
+            {% if stamp.brochure_image1 %}
+                <a href="{{ stamp.brochure_image1.url }}" class="popup-link">
+                    <img src="{{ stamp.brochure_image1.url }}" alt="Brochure for {{ stamp.name }}" class="extra-image">
+                </a>
+            {% endif %}
+            {% if stamp.brochure_image2 %}
+                <a href="{{ stamp.brochure_image2.url }}" class="popup-link">
+                    <img src="{{ stamp.brochure_image2.url }}" alt="Brochure for {{ stamp.name }}" class="extra-image">
+                </a>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <!-- Share buttons section -->
+        <hr class="thin-separator">
+        <div class="share-section">
+            <span class="share-label">Share this:</span>
+            <a href="https://twitter.com/intent/tweet?text={{ stamp.name }}&url={{ request.build_absolute_uri }}" target="_blank" class="share-btn">
+                <i class="fab fa-twitter" style="color:#1da1f2;"></i> Twitter
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" class="share-btn">
+                <i class="fab fa-facebook" style="color:#3b5998;"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="share-btn">
+                <i class="fab fa-instagram" style="color:#e4405f;"></i> Instagram
+            </a>
+        </div>
+    </div>
+
+    <!-- Right: sidebar -->
+    <div class="sidebar">
+        {% include "stamps/sidebar.html" %}
+    </div>
+</div>
+
+<!-- Modal container -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<!-- Popup script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    document.querySelectorAll(".popup-link").forEach(function(link) {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+            modalImg.src = this.href;
+        });
+    });
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    modal.onclick = function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+</script>
+{% endblock %}

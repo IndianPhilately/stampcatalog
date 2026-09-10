@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Stamp Catalogue{% endblock %}</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'stamps/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Centered header container -->
+    <div class="header-container">
+        <!-- Search bar above -->
+        <div class="search-bar">
+            <form method="get" action="{% url 'stamp_search' %}">
+                <input type="text" name="q" placeholder="Search stamps..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Header image below -->
+        <div class="header">
+            <img src="{% static 'stamps/header.jpg' %}" alt="Stamp Catalogue Header" class="header-img">
+        </div>
+        <!-- Navigation bar -->
+            <div class="nav-wrapper">
+                <nav class="nav-bar">
+                    <a href="{% url 'year_list' %}">Home</a>
+                </nav>
+            </div>
+    </div>
+
+    <!-- Centered content container -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

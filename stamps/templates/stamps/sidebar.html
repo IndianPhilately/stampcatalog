@@ -1,0 +1,56 @@
+<div class="sidebar-box">
+
+    <!-- Previous Issues widget -->
+<div class="sidebar-section">
+    <div class="sidebar-header">Previous Issues</div>
+    <div class="issue-list">
+        {% for s in previous_stamps %}
+            <div class="issue-item">
+                <div class="issue-date">{{ s.issue_date|date:"F d, Y" }}</div>
+                <a href="{% url 'stamp_detail' s.pk %}" class="issue-link">{{ s.name }}</a>
+            </div>
+        {% empty %}
+            <div class="issue-item">No previous issues found.</div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="sidebar-section">
+    <div class="sidebar-header">Next Issues</div>
+    <div class="issue-list">
+        {% for s in next_stamps %}
+            <div class="issue-item">
+                <div class="issue-date">{{ s.issue_date|date:"F d, Y" }}</div>
+                <a href="{% url 'stamp_detail' s.pk %}" class="issue-link">{{ s.name }}</a>
+            </div>
+        {% empty %}
+            <div class="issue-item">No next issues found.</div>
+        {% endfor %}
+    </div>
+</div>
+
+    <!-- Display Year widget -->
+    <div class="sidebar-section">
+        <div class="sidebar-header">Display Year</div>
+        <div class="year-list">
+            {% for y in years %}
+                <a href="{% url 'year_detail' y %}">{{ y }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+<div class="sidebar-section">
+    <div class="sidebar-header">Related Stamps</div>
+    <div class="issue-list">
+        {% for s in related_stamps %}
+            <div class="issue-item">
+                <div class="issue-date">{{ s.issue_date|date:"F d, Y" }}</div>
+                <a href="{% url 'stamp_detail' s.pk %}" class="issue-link">{{ s.name }}</a>
+            </div>
+        {% empty %}
+            <div class="issue-item">No related stamps found.</div>
+        {% endfor %}
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,573 @@
+body {
+  /* Scale the pattern down by adjusting the background-size value below */
+  background-size: 16px 28px; 
+  background-color: #111111;
+  background-image: 
+    radial-gradient(circle, #222222 25%, transparent 26%), 
+    radial-gradient(circle, #222222 25%, transparent 26%),
+    linear-gradient(30deg, transparent 49%, #222222 50%, #222222 51%, transparent 52%),
+    linear-gradient(-30deg, transparent 49%, #222222 50%, #222222 51%, transparent 52%),
+    linear-gradient(30deg, transparent 49%, #222222 50%, #222222 51%, transparent 52%),
+    linear-gradient(-30deg, transparent 49%, #222222 50%, #222222 51%, transparent 52%);
+  background-position: 0 0, 8px 14px, 0 0, 0 0, 8px 14px, 8px 14px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+.card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+.header {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* eliminates any inline spacing below the image */
+}
+
+.header-img {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    width: 984px;       /* fixed width */
+    margin: 0 auto;      /* centers horizontally */
+    padding: 20px;       /* breathing space */
+    background: rgba(255, 255, 255, 0.9); /* semi-transparent white so text is readable */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    width: 1024px;       /* fixed width */
+    margin: 0 auto;      /* center horizontally */
+    text-align: center;  /* center contents */
+}
+
+.search-bar {
+    text-align: right;   /* align search box to right edge */
+    margin-bottom: 10px;
+}
+
+.search-bar form {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.search-bar input {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 6px 12px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.search-bar button:hover {
+    background: #555;
+}
+
+.header-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-wrapper {
+    display: flex;              /* side by side */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.stamp-details {
+    width: 70%;                 /* main content */
+}
+
+.year-widget {
+    width: 25%;
+    background-color: #f5f9fc;
+    border: 1px solid #cdd9e5;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.year-header {
+    background-color: #2a7bc2;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px 4px 0 0;
+}
+
+.year-list {
+    padding: 10px;
+    display: flex;          /* put items side by side */
+    flex-wrap: wrap;        /* allow wrapping to next line */
+    gap: 8px;               /* spacing between years */
+}
+
+.year-list a {
+    display: inline-block;  /* inline boxes */
+    color: #2a7bc2;
+    text-decoration: none;
+    padding: 4px 6px;
+    border-radius: 3px;
+    background-color: #eaf2fb; /* subtle background */
+}
+
+.year-list a:hover {
+    background-color: #d0e4f7;
+    text-decoration: underline;
+}
+
+.page-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.main-container {
+    width: 70%;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stamp-title {
+    font-family: "Pontano Sans", arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;   /* or 400 */
+    color: #666666;
+    text-align: left;                 /* force left alignment */
+    margin-bottom: 10px;
+}
+
+.stamp-meta {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #2c2b2b;
+    margin-bottom: 15px;
+}
+
+.stamp-image {
+    max-width: 400px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.stamp-description {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.sidebar-box {
+    background-color: #f5f9fc;
+    border: 1px solid #cdd9e5;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+    background-color: #f5f9fc;
+    border: 1px solid #cdd9e5;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.sidebar-header {
+    background-color: #2a7bc2;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 8px;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+/* Content area gets its own padding */
+.sidebar-section .issue-list,
+.sidebar-section .year-list {
+    padding: 10px;
+}
+
+.thin-separator {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.share-section {
+    margin-top: 10px;
+}
+
+.share-label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;                  /* flat gray text */
+    background-color: #f5f5f5;    /* light gray background */
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.share-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+}
+
+.share-btn:hover {
+    background-color: #eaeaea;
+}
+
+.share-btn i {
+    margin-right: 6px;   /* adds space between icon and text */
+    font-size: 14px;     /* keeps icons balanced with text */
+    vertical-align: middle;
+}
+
+.issue-list {
+    padding-left: 0;       /* remove indentation */
+    margin: 0;
+}
+
+.issue-item {
+    margin-bottom: 12px;   /* space between entries */
+}
+
+.issue-date {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.issue-link {
+    font-size: 13px;
+    color: #007bff;        /* blue link color */
+    text-decoration: none;
+}
+
+.issue-link:hover {
+    text-decoration: underline;
+}
+
+.extra-section {
+    margin-top: 20px;
+}
+
+.extra-section h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.extra-image {
+    width: 500px;       /* fixed width */
+    max-width: 100%;    /* responsive fallback */
+    height: auto;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;     /* ensures vertical stacking */
+    cursor: pointer;
+}
+
+.brochure-gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.brochure-gallery img {
+    max-width: 48%;
+}
+
+
+/* Modal container */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 9999;
+    inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+    background-color: rgba(0,0,0,0.8);
+
+    /* Flexbox centering */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 750px;  /* enlarged popup width */
+    max-width: 75%; /* responsive fallback */
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 4px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0;
+}
+
+.stamp-item {
+  text-align: left;
+}
+
+
+.stamp-item img {
+  max-width: 175px;
+  max-height: 175px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 8px; /* space between image and text */
+}
+
+.stamp-date {
+  font-size: 12px;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.stamp-titleyear {
+  font-size: 12px;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.stamp-info {
+  margin-top: 8px;
+}
+
+.nav-wrapper {
+    max-width: 1024px;
+    margin: 0 auto;        /* center align */
+}
+
+.nav-bar {
+    background-color: #2a7bc2;
+    padding: 8px 16px;
+    margin-top: 0;         /* no gap above */
+    text-align: left;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+.latest-stamp {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.latest-stamp img {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.stamp-description {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.home-title {
+    font-family: "Pontano Sans", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: normal;   /* keeps it slim */
+    color: #1772AF;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.latest-title {
+    font-family: "Pontano Sans", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;   /* keeps it slim */
+    color: #333333;
+    margin-top: 0;         /* removes extra space above */
+    margin-bottom: 12px;   /* neat spacing below */
+}
+
+.bottom-slider {
+    max-width: 1024px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to right, #1e5799, #2989d8);
+    padding: 20px 0;
+}
+
+.slider-wrapper {
+    position: relative;
+}
+
+.slide {
+    display: none;
+    background-color: #fff;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 220px; /* consistent height */
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-left {
+    flex: 0 0 160px;
+    display: flex;
+    align-items: flex-start; /* keeps image top-aligned */
+    justify-content: center;
+}
+
+.slide-stamp {
+    max-width: 150px;
+    max-height: 175px; /* slightly taller box */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0; /* remove any default gap */
+}
+
+.slide-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* stack content from top */
+    height: 100%;
+    position: relative;          /* allows absolute positioning inside */
+}
+
+.slide-footer {
+    position: absolute;
+    bottom: 20px;                /* aligns button near bottom edge */
+    right: 20px;                 /* keeps it right-aligned */
+}
+
+.slide-title {
+    font-family: "georgia", Arial, sans-serif;
+    font-size: 26px;
+    color: #1772af;
+    margin: 0 0 8px 0;
+}
+
+.slide-right p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.slide-btn {
+    display: inline-block;
+    background-color: #2a7bc2;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+
+.slide-btn:hover {
+    background-color: #1e5799;
+}
+
+
+
+
+

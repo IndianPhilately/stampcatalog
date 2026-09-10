@@ -1,0 +1,8 @@
+<div class="year-widget">
+    <div class="year-header">Display Year</div>
+    <div class="year-list">
+        {% for y in years %}
+            <a href="{% url 'year_detail' y.year %}">{{ y.year }}</a>
+        {% endfor %}
+    </div>
+</div>
